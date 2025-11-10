@@ -1,6 +1,6 @@
-# Proyecto Dietas AHP
+# Proyecto Dietas 
 
-Este proyecto forma parte del curso **Teoría de la Decisión** y tiene como objetivo aplicar el método **AHP (Analytic Hierarchy Process)** para evaluar diferentes dietas en función de múltiples criterios.
+Este proyecto forma parte del curso **Teoría de la Decisión** y tiene como objetivo aplicar los metodos de decision multicriterio como **AHP (Analytic Hierarchy Process), Promethee y Electre** para evaluar diferentes dietas en función de múltiples criterios.
 
 ## 📂 Contenido del repositorio
 
