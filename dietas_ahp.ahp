@@ -1,0 +1,202 @@
+
+Version: 2.0
+
+Alternatives: &alternatives
+  Onnivora:
+  Vegetariana:
+  Vegana:
+  Mediterranea:
+  Flexitariana:
+  Nordica:
+
+Goal:
+  name: Elegir la mejor dieta
+  preferences:
+    pairwise:
+      - [Salud, Ambiente, "2"]
+      - [Salud, EconomiaEtica, "3"]
+      - [Ambiente, EconomiaEtica, "2"]
+  children:
+
+    Salud:
+      preferences:
+        pairwise:
+          - [SaludCV, Diabetes, "2"]
+          - [SaludCV, Adecuacion, "4"]
+          - [Diabetes, Adecuacion, "3"]
+      children:
+
+        SaludCV:
+          preferences:
+            pairwise:
+              - [Onnivora, Vegetariana, "1/5"]
+              - [Onnivora, Vegana, "1/6"]
+              - [Onnivora, Mediterranea, "1/7"]
+              - [Onnivora, Flexitariana, "1/3"]
+              - [Onnivora, Nordica, "1/4"]
+              - [Vegetariana, Vegana, "1"]
+              - [Vegetariana, Mediterranea, "1/2"]
+              - [Vegetariana, Flexitariana, "3"]
+              - [Vegetariana, Nordica, "2"]
+              - [Vegana, Mediterranea, "1/2"]
+              - [Vegana, Flexitariana, "3"]
+              - [Vegana, Nordica, "2"]
+              - [Mediterranea, Flexitariana, "4"]
+              - [Mediterranea, Nordica, "2"]
+              - [Flexitariana, Nordica, "1/2"]
+          children: *alternatives
+
+        Diabetes:
+          preferences:
+            pairwise:
+              - [Onnivora, Vegetariana, "1/5"]
+              - [Onnivora, Vegana, "1/6"]
+              - [Onnivora, Mediterranea, "1/4"]
+              - [Onnivora, Flexitariana, "1/3"]
+              - [Onnivora, Nordica, "1/2"]
+              - [Vegetariana, Vegana, "1/2"]
+              - [Vegetariana, Mediterranea, "2"]
+              - [Vegetariana, Flexitariana, "3"]
+              - [Vegetariana, Nordica, "2"]
+              - [Vegana, Mediterranea, "3"]
+              - [Vegana, Flexitariana, "4"]
+              - [Vegana, Nordica, "3"]
+              - [Mediterranea, Flexitariana, "1/2"]
+              - [Mediterranea, Nordica, "1/2"]
+              - [Flexitariana, Nordica, "1/2"]
+          children: *alternatives
+
+        Adecuacion:
+          preferences:
+            pairwise:
+              - [Onnivora, Vegetariana, "1/2"]
+              - [Onnivora, Vegana, "2"]
+              - [Onnivora, Mediterranea, "1/3"]
+              - [Onnivora, Flexitariana, "1/2"]
+              - [Onnivora, Nordica, "1/3"]
+              - [Vegetariana, Vegana, "1/3"]
+              - [Vegetariana, Mediterranea, "1/2"]
+              - [Vegetariana, Flexitariana, "1"]
+              - [Vegetariana, Nordica, "1/2"]
+              - [Vegana, Mediterranea, "1/3"]
+              - [Vegana, Flexitariana, "1/2"]
+              - [Vegana, Nordica, "1/3"]
+              - [Mediterranea, Flexitariana, "2"]
+              - [Mediterranea, Nordica, "1"]
+              - [Flexitariana, Nordica, "1/2"]
+          children: *alternatives
+
+    Ambiente:
+      preferences:
+        pairwise:
+          - [Emisiones, Agua, "2"]
+          - [Emisiones, Suelo, "4"]
+          - [Agua, Suelo, "2"]
+      children:
+
+        Emisiones:
+          preferences:
+            pairwise:
+              - [Onnivora, Vegetariana, "1/5"]
+              - [Onnivora, Vegana, "1/6"]
+              - [Onnivora, Mediterranea, "1/3"]
+              - [Onnivora, Flexitariana, "1/2"]
+              - [Onnivora, Nordica, "1/3"]
+              - [Vegetariana, Vegana, "1/2"]
+              - [Vegetariana, Mediterranea, "3"]
+              - [Vegetariana, Flexitariana, "4"]
+              - [Vegetariana, Nordica, "3"]
+              - [Vegana, Mediterranea, "4"]
+              - [Vegana, Flexitariana, "5"]
+              - [Vegana, Nordica, "4"]
+              - [Mediterranea, Flexitariana, "3"]
+              - [Mediterranea, Nordica, "2"]
+              - [Flexitariana, Nordica, "1/2"]
+          children: *alternatives
+
+        Agua:
+          preferences:
+            pairwise:
+              - [Onnivora, Vegetariana, "1/3"]
+              - [Onnivora, Vegana, "1/6"]
+              - [Onnivora, Mediterranea, "1/4"]
+              - [Onnivora, Flexitariana, "1/3"]
+              - [Onnivora, Nordica, "1/4"]
+              - [Vegetariana, Vegana, "1/3"]
+              - [Vegetariana, Mediterranea, "1/2"]
+              - [Vegetariana, Flexitariana, "2"]
+              - [Vegetariana, Nordica, "1/2"]
+              - [Vegana, Mediterranea, "2"]
+              - [Vegana, Flexitariana, "4"]
+              - [Vegana, Nordica, "2"]
+              - [Mediterranea, Flexitariana, "2"]
+              - [Mediterranea, Nordica, "1"]
+              - [Flexitariana, Nordica, "1/2"]
+          children: *alternatives
+
+        Suelo:
+          preferences:
+            pairwise:
+              - [Onnivora, Vegetariana, "1/4"]
+              - [Onnivora, Vegana, "1/5"]
+              - [Onnivora, Mediterranea, "1/3"]
+              - [Onnivora, Flexitariana, "1/2"]
+              - [Onnivora, Nordica, "1/3"]
+              - [Vegetariana, Vegana, "1/2"]
+              - [Vegetariana, Mediterranea, "2"]
+              - [Vegetariana, Flexitariana, "3"]
+              - [Vegetariana, Nordica, "2"]
+              - [Vegana, Mediterranea, "3"]
+              - [Vegana, Flexitariana, "4"]
+              - [Vegana, Nordica, "3"]
+              - [Mediterranea, Flexitariana, "1/2"]
+              - [Mediterranea, Nordica, "1"]
+              - [Flexitariana, Nordica, "1/2"]
+          children: *alternatives
+
+    EconomiaEtica:
+      preferences:
+        pairwise:
+          - [Animal, Costo, "3"]
+      children:
+
+        Costo:
+          preferences:
+            pairwise:
+              - [Onnivora, Vegetariana, "1/3"]
+              - [Onnivora, Vegana, "1/3"]
+              - [Onnivora, Mediterranea, "1/2"]
+              - [Onnivora, Flexitariana, "1/2"]
+              - [Onnivora, Nordica, "1/4"]
+              - [Vegetariana, Vegana, "1"]
+              - [Vegetariana, Mediterranea, "2"]
+              - [Vegetariana, Flexitariana, "2"]
+              - [Vegetariana, Nordica, "3"]
+              - [Vegana, Mediterranea, "2"]
+              - [Vegana, Flexitariana, "2"]
+              - [Vegana, Nordica, "3"]
+              - [Mediterranea, Flexitariana, "2"]
+              - [Mediterranea, Nordica, "1/2"]
+              - [Flexitariana, Nordica, "1/2"]
+          children: *alternatives
+
+        Animal:
+          preferences:
+            pairwise:
+              - [Onnivora, Vegetariana, "1/4"]
+              - [Onnivora, Vegana, "1/6"]
+              - [Onnivora, Mediterranea, "1/3"]
+              - [Onnivora, Flexitariana, "1/2"]
+              - [Onnivora, Nordica, "1/3"]
+              - [Vegetariana, Vegana, "1/3"]
+              - [Vegetariana, Mediterranea, "2"]
+              - [Vegetariana, Flexitariana, "3"]
+              - [Vegetariana, Nordica, "2"]
+              - [Vegana, Mediterranea, "4"]
+              - [Vegana, Flexitariana, "5"]
+              - [Vegana, Nordica, "4"]
+              - [Mediterranea, Flexitariana, "1/2"]
+              - [Mediterranea, Nordica, "1"]
+              - [Flexitariana, Nordica, "1/2"]
+          children: *alternatives
+

@@ -1,0 +1,17 @@
+readr
+dplyr
+tibble
+tidyr
+stringr
+ggplot2
+kableExtra
+Matrix
+formattable
+htmltools
+webshot
+shape
+diagram
+knitr
+qgraph
+ahp
+htmlwidgets
